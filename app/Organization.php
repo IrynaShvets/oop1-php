@@ -33,6 +33,7 @@ class Organization
      */
     public function setAuthor(string $author): void
     {
+        $this->author = formNameOfAuthorOfReport();
         $this->author = $author;
     }
 

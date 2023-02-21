@@ -40,14 +40,19 @@ abstract class Report
         return $this->author;
     }
 
+    public function renderd(string $text): string
+    {
+        $text = trim(str_ireplace('{anchor}', "Palmo", $text));
+        return $text;
+    }
+
     /**
      * @param string $text
      */
-    public function setText(string $text): void
+    public function render(string $text): void
     {
-        $this->text = trim($text);
+        $this->text = trim(str_ireplace('{anchor}', "Palmo", $text));
     }
-
 
     abstract public function getDateReportCreated(): mixed;
 
