@@ -4,7 +4,7 @@ namespace App;
 
 abstract class Report
 {
-    use \App\formName;
+    use \App\FormName;
 
     private $number;
     private $name;

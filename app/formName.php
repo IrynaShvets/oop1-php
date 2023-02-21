@@ -1,11 +1,11 @@
 <?php
 
 namespace App;
-trait formName
+
+trait FormName
 {
     public function formNameOfAuthorOfReport(): string
     {
-        list($firstname, $lastname, $surname) = explode(" ", $this->getAuthor());
         $words = explode(" ", $this->getAuthor());
         $firstname = $words[0];
         $lastname = mb_substr(mb_strtoupper($words[1]), 0, 1) . '.';

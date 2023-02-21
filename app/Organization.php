@@ -4,7 +4,7 @@ namespace App;
 
 class Organization
 {
-    use \App\formName;
+    use \App\FormName;
 
     private $title;
     private $ipn;
@@ -28,9 +28,17 @@ class Organization
         return $this->author;
     }
 
-    public function getInformationAboutOrganization(string $title, string $ipn, string $kpp, string $author)
+    /**
+     * @param string $author
+     */
+    public function setAuthor(string $author): void
     {
-        return $title . '<br>' . '(' . 'ІПН:' . $ipn . 'КПП:' . $kpp . '.' . 'Директор: ' . $author;
+        $this->author = $author;
+    }
+
+    public function getInformationAboutOrganization()
+    {
+        return "$this->title\n(ІПН:$this->ipn\КПП:$this->kpp). Директор: $this->author";
     }
 
 }
